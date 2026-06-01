@@ -1,4 +1,4 @@
-# 🐍 Python OOP: Abstract Class & Method Example
+<img width="1472" height="863" alt="image" src="https://github.com/user-attachments/assets/335ed431-829e-4deb-b605-d10f18775917" /># 🐍 Python OOP: Abstract Class & Method Example
 
 ## 🎯 AIM
 
@@ -29,7 +29,37 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
 ---
 
 ## 💻 Program
+from abc import ABC, abstractmethod
+import math
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length=5, breadth=4):
+        self.length = length
+        self.breadth = breadth
+
+    def calculate_area(self):
+        return self.length * self.breadth
+
+class Circle(Shape):
+    def __init__(self, radius=3):
+        self.radius = radius
+
+    def calculate_area(self):
+        return math.pi * self.radius * self.radius
+
+r = Rectangle()
+c = Circle()
+
+print("Area of Rectangle =", r.calculate_area())
+print("Area of Circle =", round(c.calculate_area(), 2))
 
 ## Output
+<img width="1472" height="863" alt="Screenshot 2026-06-01 140308" src="https://github.com/user-attachments/assets/c78aa22e-f47e-4d69-b2c0-bda622059a8a" />
 
 ## Result
+Thus, the abstract class Shape and its abstract method calculate_area() were successfully implemented in the Rectangle and Circle subclasses.
